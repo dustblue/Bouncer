@@ -208,26 +208,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void moveCircle(int dir) {
-        if (drawView.x>0 & drawView.y>0) {
-            if (drawView.x<screenWidth & drawView.y<screenHeight) {
+        if (drawView.m-drawView.r>0 & drawView.n-drawView.r>0) {
+            if (drawView.m<screenWidth & drawView.n<screenHeight) {
                 switch(dir) {
                     case 0: {
-                        drawView.y-=10;
+                        drawView.n-=10;
                         drawView.invalidate();
                         break;
                     }
                     case 1: {
-                        drawView.x+=10;
+                        drawView.m+=10;
                         drawView.invalidate();
                         break;
                     }
                     case 2: {
-                        drawView.y+=10;
+                        drawView.n+=10;
                         drawView.invalidate();
                         break;
                     }
                     case 3: {
-                        drawView.x-=10;
+                        drawView.m-=10;
                         drawView.invalidate();
                         break;
                     }
@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
     public class Draw extends View {
         Paint paint = new Paint();
         int id=0;
-        int x =100, y=100, a=180, b=180,c=140, d=180, r=40;
+        int x =100, y=100, m=100, n= 100, a=180, b=180,c=140, d=180, r=40;
         public Draw(Context context) {
             super(context);
         }
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
             paint.setColor(Color.BLACK);
             switch(id) {
                 case 1:{canvas.drawRect(x,y,a,b,paint);break;}
-                case 2:{canvas.drawCircle(x,y,r,paint);break;}
+                case 2:{canvas.drawCircle(m,n,r,paint);break;}
                 case 3:{canvas.drawRect(x,y,c,d,paint);break;}
                 default: {canvas.drawRect(x,y,a,b,paint);break;}
             }
