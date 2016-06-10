@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void moveCircle(int dir) {
         if (drawView.m-drawView.r>0 & drawView.n-drawView.r>0) {
-            if (drawView.m<screenWidth & drawView.n<screenHeight) {
+            if (drawView.m<screenWidth& drawView.n<screenHeight) {
                 switch(dir) {
                     case 0: {
                         drawView.n-=10;
